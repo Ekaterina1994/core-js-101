@@ -58,8 +58,9 @@ function generateOdds(len) {
  *    [0, 1, 2, 3, 4, 5] => [0, 1, 2, 3, 4, 5,   0, 1, 2, 3, 4, 5]
  *    [] => []
  */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
+function doubleArray(arr) {
+  const result = arr.concat(arr);
+  return result;
 }
 
 /**
@@ -209,8 +210,9 @@ function getTail(arr, n) {
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
-function toCsvText(/* arr */) {
-  throw new Error('Not implemented');
+function toCsvText(arr) {
+  const result = arr.map((array) => array.join(','));
+  return result.join('\n');
 }
 
 /**
@@ -225,10 +227,9 @@ function toCsvText(/* arr */) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
-  const result = arr.map((item) => (item ** 2));
+  const result = arr.map((item) => item ** 2);
   return result;
 }
-
 
 /**
  * Transforms the numeric array to the according moving sum array:
@@ -244,8 +245,14 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  throw new Error('Not implemented');
+function getMovingSum(arr) {
+  const array = [];
+  const initialValue = 0;
+  arr.reduce((acc, current) => {
+    array.push(acc + current);
+    return acc + current;
+  }, initialValue);
+  return array;
 }
 
 /**
@@ -259,8 +266,9 @@ function getMovingSum(/* arr */) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(/* arr */) {
-  throw new Error('Not implemented');
+function getSecondItems(arr) {
+  const result = arr.filter((item) => arr.indexOf(item) % 2 === 1);
+  return result;
 }
 
 /**
@@ -382,8 +390,10 @@ function getFalsyValuesCount(arr) {
  *    [ null, undefined, null ], null => 2
  *    [ true, 0, 1, 'true' ], true => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, item) {
+  const initialValue = 0;
+  const result = arr.reduce((acc, current) => (current === item ? acc + 1 : acc), initialValue);
+  return result;
 }
 
 /**
@@ -482,8 +492,9 @@ function getIntervalArray(/* start, end */) {
  *   [ 'a', 'a', 'a', 'a' ]  => [ 'a' ]
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  const result = Array.from(new Set(arr));
+  return result;
 }
 
 /**

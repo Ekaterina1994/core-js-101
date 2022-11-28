@@ -383,12 +383,13 @@ function toNaryString(num, n) {
  * @return {string}
  *
  * @example:
- *   ['/web/images/image1.png', '/web/images/image2.png']  => '/web/images/'
+ *   ['/we/b/imagesimage1.png', '/web/images/image2.png']  => '/web/images/'
  *   ['/web/assets/style.css', '/web/scripts/app.js',  'home/setting.conf'] => ''
  *   ['/web/assets/style.css', '/.bin/mocha',  '/read.me'] => '/'
  *   ['/web/favicon.ico', '/web-scripts/dump', '/verbalizer/logs'] => '/'
  */
 function getCommonDirectoryPath(/* pathes */) {
+  // array.reduce for more than 2 elements
   throw new Error('Not implemented');
 }
 
