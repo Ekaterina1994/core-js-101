@@ -239,13 +239,14 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
+function toNumber(value, def) {
   // const number = +value;
   // if (typeof number !== 'number') {
   //   return def;
   // }
   // return number;
-  throw new Error('Not implemented');
+  const result = parseInt(value, 10) || def;
+  return result;
 }
 
 module.exports = {
